@@ -15,11 +15,13 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Validate outputs JSON
+      - name: Validate outputs JSON and links
         run: |
           python - <<'PY'
           import json
+          import re
           from pathlib import Path
+          from urllib.parse import urlparse
 
           path = Path('outputs.json')
           payload = json.loads(path.read_text(encoding='utf-8'))
@@ -28,12 +30,44 @@ jobs:
               raise SystemExit('outputs.json must contain a non-empty outputs list')
 
           required = ['title', 'source', 'category', 'topic', 'description', 'url', 'button_text']
+          link_required_words = re.compile(r'\b(read|listen|view|watch|open|download)\b', re.I)
+          allowed_unlinked = {
+              'no public recording',
+              'details pending',
+              'link pending',
+              'not publicly available',
+              'unavailable',
+          }
+
           for i, item in enumerate(outputs, start=1):
               missing = [field for field in required if field not in item]
               if missing:
                   raise SystemExit(f'Output {i} is missing: {missing}')
-              if not str(item.get('title', '')).strip():
+
+              title = str(item.get('title', '')).strip()
+              if not title:
                   raise SystemExit(f'Output {i} has an empty title')
 
-          print(f'Validated {len(outputs)} outputs.')
+              button = str(item.get('button_text', '')).strip()
+              url = str(item.get('url', '')).strip()
+              button_key = button.lower()
+
+              if url:
+                  parsed = urlparse(url)
+                  if parsed.scheme not in {'http', 'https'} or not parsed.netloc:
+                      raise SystemExit(f'Output {i} ({title}) has an invalid URL: {url}')
+                  if 'utm_source=chatgpt.com' in url.lower():
+                      raise SystemExit(f'Output {i} ({title}) still contains a ChatGPT tracking parameter')
+              else:
+                  if link_required_words.search(button):
+                      raise SystemExit(
+                          f'Output {i} ({title}) has button_text "{button}" but no URL. '
+                          'Add a URL or change the button text to an allowed disabled label.'
+                      )
+                  if button_key not in allowed_unlinked:
+                      raise SystemExit(
+                          f'Output {i} ({title}) has no URL and unsupported disabled button text: "{button}"'
+                      )
+
+          print(f'Validated {len(outputs)} outputs and hyperlink rules.')
           PY
