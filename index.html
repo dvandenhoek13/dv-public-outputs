@@ -87,10 +87,11 @@ function esc(s) {
 }
 
 function card(item) {
-  const hasUrl = item.url && String(item.url).trim().length > 0;
+  const url = String(item.url || '').trim();
+  const hasUrl = url.length > 0;
   const btn = item.button_text || (item.category === 'Broadcast & Audio' ? 'Listen now' : 'View output');
   const action = hasUrl
-    ? `<a target="_blank" rel="noopener" href="${esc(item.url)}">${esc(btn)} ↗</a>`
+    ? `<a target="_blank" rel="noopener noreferrer" href="${esc(url)}">${esc(btn)} ↗</a>`
     : `<span class="disabled">${esc(btn)}</span>`;
   const date = [item.source, item.year].filter(Boolean).join(' · ');
   return `<article class="card">
@@ -124,7 +125,7 @@ function setupFilters() {
   }));
 }
 
-fetch('outputs.json')
+fetch('outputs.json?v=20260714-links2', { cache: 'no-store' })
   .then(response => {
     if (!response.ok) throw new Error(`Could not load outputs.json: ${response.status}`);
     return response.json();
