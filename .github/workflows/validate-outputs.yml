@@ -2,6 +2,9 @@ name: Validate public outputs
 
 on:
   workflow_dispatch:
+  schedule:
+    # Monthly refresh/validation on the first day of each month.
+    - cron: '17 2 1 * *'
   push:
     paths:
       - 'outputs.json'
@@ -39,6 +42,7 @@ jobs:
               'unavailable',
           }
 
+          seen = set()
           for i, item in enumerate(outputs, start=1):
               missing = [field for field in required if field not in item]
               if missing:
@@ -47,6 +51,11 @@ jobs:
               title = str(item.get('title', '')).strip()
               if not title:
                   raise SystemExit(f'Output {i} has an empty title')
+
+              duplicate_key = (title.lower(), str(item.get('source', '')).strip().lower())
+              if duplicate_key in seen:
+                  raise SystemExit(f'Duplicate output detected: {title}')
+              seen.add(duplicate_key)
 
               button = str(item.get('button_text', '')).strip()
               url = str(item.get('url', '')).strip()
