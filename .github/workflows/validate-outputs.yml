@@ -1,4 +1,4 @@
-name: Build and validate public outputs
+name: Build, validate and publish public outputs
 
 on:
   workflow_dispatch:
@@ -8,7 +8,9 @@ on:
   push:
     paths:
       - 'posts/**'
+      - 'social/**'
       - 'scripts/build_commentary.py'
+      - 'scripts/publish_to_wix.py'
       - 'outputs.json'
       - 'index.html'
       - '.github/workflows/validate-outputs.yml'
@@ -17,7 +19,7 @@ permissions:
   contents: write
 
 jobs:
-  build-and-validate:
+  build-validate-publish:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -96,6 +98,13 @@ jobs:
 
           print(f'Validated {len(outputs)} outputs, {len(post_files)} posts and hyperlink rules.')
           PY
+
+      - name: Publish Insights to Wix CMS
+        if: github.ref == 'refs/heads/main'
+        env:
+          WIX_PUBLISH_KEY: ${{ secrets.WIX_PUBLISH_KEY }}
+          WIX_PUBLISH_URL: ${{ vars.WIX_PUBLISH_URL }}
+        run: python scripts/publish_to_wix.py
 
       - name: Commit generated files
         if: github.event_name != 'pull_request'

@@ -1,10 +1,16 @@
 ---
 title: When Mathematics Decides Medals: The Hidden Science Behind Para Powerlifting at the Commonwealth Games
 date: 2026-07-17
-category: Written Commentary
+category: Insights
 topic: Para Powerlifting
 summary: How bodyweight-adjusted scoring algorithms will influence para-powerlifting medal outcomes at the Glasgow 2026 Commonwealth Games.
 slug: when-mathematics-decides-medals
+read_time: 4
+featured: true
+status: Published
+seo_description: How bodyweight-adjusted scoring could influence para-powerlifting medal outcomes at the Glasgow 2026 Commonwealth Games.
+tags: para-powerlifting, Commonwealth Games, scoring algorithms, sport science
+hero_image_alt: Para-powerlifting athlete preparing to bench press beneath an abstract mathematical scoring overlay.
 ---
 When most people watch a strength sport, they assume the athlete who lifts the heaviest weight wins.
 

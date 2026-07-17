@@ -3,6 +3,8 @@
 
 Posts live in posts/*.md with simple YAML-like front matter. The script uses only
 Python's standard library so it can run in GitHub Actions without extra packages.
+The generated GitHub Pages article remains a portable fallback, while public cards
+link to the canonical Insight hosted on danvandenhoek.com.
 """
 from __future__ import annotations
 
@@ -16,7 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 POSTS_DIR = ROOT / "posts"
 ARTICLES_DIR = ROOT / "articles"
 OUTPUTS_PATH = ROOT / "outputs.json"
-SITE_BASE = "https://dvandenhoek13.github.io/dv-public-outputs"
+INSIGHTS_BASE = "https://www.danvandenhoek.com/insights"
 CONTACT_EMAIL = "dan@danvandenhoek.com"
 MAIN_SITE = "https://www.danvandenhoek.com"
 
@@ -83,6 +85,7 @@ def article_page(meta: dict[str, str], body_html: str) -> str:
     summary = html.escape(meta["summary"])
     published = html.escape(meta["date"])
     topic = html.escape(meta["topic"])
+    canonical = f"{INSIGHTS_BASE}/{meta['slug']}"
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -90,6 +93,7 @@ def article_page(meta: dict[str, str], body_html: str) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title} | Dan van den Hoek</title>
 <meta name="description" content="{summary}">
+<link rel="canonical" href="{canonical}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{summary}">
 <meta property="og:type" content="article">
@@ -112,7 +116,7 @@ footer a{{font-weight:800}} @media(max-width:560px){{.site-header{{align-items:f
 <a class="vdh-logo" href="{MAIN_SITE}" aria-label="VDH home">VDH<span>.</span></a>
 <a class="contact-link" href="mailto:{CONTACT_EMAIL}">Contact Dan</a>
 </header>
-<a class="back" href="../">← Back to media</a>
+<a class="back" href="{canonical}">View the canonical website article →</a>
 <div class="eyebrow">{topic}</div>
 <h1>{title}</h1>
 <div class="meta">Published {published} · Dr Dan van den Hoek</div>
@@ -144,7 +148,7 @@ def main() -> None:
             "category": meta["category"],
             "topic": meta["topic"],
             "description": meta["summary"],
-            "url": f"{SITE_BASE}/articles/{meta['slug']}.html",
+            "url": f"{INSIGHTS_BASE}/{meta['slug']}",
             "button_text": "Read article",
             "source_type": "Website commentary",
         })
