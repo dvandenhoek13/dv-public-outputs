@@ -1,9 +1,21 @@
 {
-  "generated_at": "2026-07-16",
+  "generated_at": "2026-07-17",
   "owner": "Dr Dan van den Hoek",
   "description": "Selected media appearances, written commentary, podcasts, radio appearances, news stories, and public commentary.",
   "notes": "Research publications, professional reports, university outputs, and tools have been moved to the separate research outputs page.",
   "outputs": [
+    {
+      "title": "When Mathematics Decides Medals: The Hidden Science Behind Para Powerlifting at the Commonwealth Games",
+      "source": "Dan van den Hoek",
+      "year": "2026",
+      "date": "2026-07-17",
+      "category": "Written Commentary",
+      "topic": "Para Powerlifting",
+      "description": "How bodyweight-adjusted scoring algorithms will influence para-powerlifting medal outcomes at the Glasgow 2026 Commonwealth Games.",
+      "url": "https://dvandenhoek13.github.io/dv-public-outputs/articles/when-mathematics-decides-medals.html",
+      "button_text": "Read article",
+      "source_type": "Website commentary"
+    },
     {
       "title": "UniSC academic steers team to its first Queensland Q-Clash wheelchair AFL premiership",
       "source": "Sunshine Coast News",
@@ -14,90 +26,6 @@
       "description": "External media profile on wheelchair AFL, coaching, leadership, and community sport.",
       "url": "https://www.sunshinecoastnews.com.au/2025/10/24/academic-inspires-team-to-maiden-victory/",
       "button_text": "Read now",
-      "source_type": "CMS seed; externally verified"
-    },
-    {
-      "title": "The Health Benefits of Muscle with Dan van den Hoek",
-      "source": "Spotify",
-      "year": "2024",
-      "date": "2024-10-16",
-      "category": "Broadcast & Audio",
-      "topic": "Strength",
-      "description": "Podcast discussion explaining the why and how of strength training and muscle health.",
-      "url": "https://open.spotify.com/episode/4tjwplXxi4sUUrvXb9hQjl",
-      "button_text": "Listen now",
-      "source_type": "CMS seed"
-    },
-    {
-      "title": "Lessons from the Para-powerlifters",
-      "source": "ABC Radio National – Ockham’s Razor",
-      "year": "2022",
-      "date": "2022-04-23",
-      "category": "Broadcast & Audio",
-      "topic": "Parasport",
-      "description": "ABC science communication segment on strength, para-powerlifting, and how strength can be measured.",
-      "url": "https://www.abc.net.au/listen/programs/ockhamsrazor/how-do-you-measure-strength/13847836",
-      "button_text": "Listen now",
-      "source_type": "CMS seed; externally verified"
-    },
-    {
-      "title": "F1 Sports Drivers Fitness",
-      "source": "ABC Radio – Nightlife",
-      "year": "2024",
-      "date": "2024-03-28",
-      "category": "Broadcast & Audio",
-      "topic": "Formula 1",
-      "description": "Radio segment discussing the physical demands, training, and performance requirements of Formula 1 drivers.",
-      "url": "https://www.abc.net.au/listen/programs/nightlife/f1-sports-drivers-fitness/103647374",
-      "button_text": "Listen now",
-      "source_type": "CMS seed; externally verified"
-    },
-    {
-      "title": "Powerlifting at any age: your fountain of health? With Dan van den Hoek",
-      "source": "Evidence Strong",
-      "year": "2024",
-      "date": "",
-      "category": "Broadcast & Audio",
-      "topic": "Powerlifting",
-      "description": "Podcast discussion on powerlifting, health, ageing, strength training, and strength sports research.",
-      "url": "https://rss.com/podcasts/evidence-strong/1700610/",
-      "button_text": "Listen now",
-      "source_type": "CMS seed; externally verified"
-    },
-    {
-      "title": "Saturday 7th September 2024: Dr Dan van den Hoek",
-      "source": "JOY 94.9 – Saturday Magazine",
-      "year": "2024",
-      "date": "2024-09-09",
-      "category": "Broadcast & Audio",
-      "topic": "Parasport",
-      "description": "Live radio discussion on Paralympic sport, classification, medal hopes, and challenges facing Paralympic athletes.",
-      "url": "https://joy.org.au/saturdaymagazine/2024/09/saturday-7th-september-2024-dr-dan-van-den-hoek-senior-lecturer-in-clinical-exercise-physiology-uni-of-the-sunshine-coast/",
-      "button_text": "Listen now",
-      "source_type": "CMS seed; externally verified"
-    },
-    {
-      "title": "A guide to strength training and powerlifting",
-      "source": "Exercise Right",
-      "year": "2024",
-      "date": "2024-05-15",
-      "category": "Written Commentary",
-      "topic": "Powerlifting",
-      "description": "Public-facing article introducing strength training, powerlifting, health benefits, and safe participation.",
-      "url": "https://exerciseright.com.au/articles/a-guide-to-strength-training-and-powerlifting/",
-      "button_text": "Read article",
-      "source_type": "CMS seed; externally verified"
-    },
-    {
-      "title": "Transform your life with powerlifting and strength training",
-      "source": "Exercise and Sports Science Australia (ESSA) / Exercise Right",
-      "year": "2024",
-      "date": "2024",
-      "category": "Written Commentary",
-      "topic": "Powerlifting",
-      "description": "Activate magazine article co-authored with Christopher Latella on powerlifting, strength training, health, and inclusion.",
-      "url": "https://www.essa.org.au/Common/Uploaded%20files/Publications/Magazines/mag-activate-2024.pdf",
-      "button_text": "Read article",
       "source_type": "CMS seed; externally verified"
     },
     {
@@ -125,6 +53,30 @@
       "source_type": "CMS seed"
     },
     {
+      "title": "The Health Benefits of Muscle with Dan van den Hoek",
+      "source": "Spotify",
+      "year": "2024",
+      "date": "2024-10-16",
+      "category": "Broadcast & Audio",
+      "topic": "Strength",
+      "description": "Podcast discussion explaining the why and how of strength training and muscle health.",
+      "url": "https://open.spotify.com/episode/4tjwplXxi4sUUrvXb9hQjl",
+      "button_text": "Listen now",
+      "source_type": "CMS seed"
+    },
+    {
+      "title": "Saturday 7th September 2024: Dr Dan van den Hoek",
+      "source": "JOY 94.9 – Saturday Magazine",
+      "year": "2024",
+      "date": "2024-09-09",
+      "category": "Broadcast & Audio",
+      "topic": "Parasport",
+      "description": "Live radio discussion on Paralympic sport, classification, medal hopes, and challenges facing Paralympic athletes.",
+      "url": "https://joy.org.au/saturdaymagazine/2024/09/saturday-7th-september-2024-dr-dan-van-den-hoek-senior-lecturer-in-clinical-exercise-physiology-uni-of-the-sunshine-coast/",
+      "button_text": "Listen now",
+      "source_type": "CMS seed; externally verified"
+    },
+    {
       "title": "After being wowed by Olympic athletes in Paris, it’s time to take notice of exceptional Paralympic exploits",
       "source": "The Conversation",
       "year": "2024",
@@ -149,6 +101,30 @@
       "source_type": "CMS seed"
     },
     {
+      "title": "A guide to strength training and powerlifting",
+      "source": "Exercise Right",
+      "year": "2024",
+      "date": "2024-05-15",
+      "category": "Written Commentary",
+      "topic": "Powerlifting",
+      "description": "Public-facing article introducing strength training, powerlifting, health benefits, and safe participation.",
+      "url": "https://exerciseright.com.au/articles/a-guide-to-strength-training-and-powerlifting/",
+      "button_text": "Read article",
+      "source_type": "CMS seed; externally verified"
+    },
+    {
+      "title": "F1 Sports Drivers Fitness",
+      "source": "ABC Radio – Nightlife",
+      "year": "2024",
+      "date": "2024-03-28",
+      "category": "Broadcast & Audio",
+      "topic": "Formula 1",
+      "description": "Radio segment discussing the physical demands, training, and performance requirements of Formula 1 drivers.",
+      "url": "https://www.abc.net.au/listen/programs/nightlife/f1-sports-drivers-fitness/103647374",
+      "button_text": "Listen now",
+      "source_type": "CMS seed; externally verified"
+    },
+    {
       "title": "What happens to F1 drivers’ bodies, and what sort of training do they do?",
       "source": "The Conversation",
       "year": "2024",
@@ -159,6 +135,30 @@
       "url": "https://theconversation.com/what-happens-to-f1-drivers-bodies-and-what-sort-of-training-do-they-do-226331",
       "button_text": "Read article",
       "source_type": "CMS seed"
+    },
+    {
+      "title": "Transform your life with powerlifting and strength training",
+      "source": "Exercise and Sports Science Australia (ESSA) / Exercise Right",
+      "year": "2024",
+      "date": "2024",
+      "category": "Written Commentary",
+      "topic": "Powerlifting",
+      "description": "Activate magazine article co-authored with Christopher Latella on powerlifting, strength training, health, and inclusion.",
+      "url": "https://www.essa.org.au/Common/Uploaded%20files/Publications/Magazines/mag-activate-2024.pdf",
+      "button_text": "Read article",
+      "source_type": "CMS seed; externally verified"
+    },
+    {
+      "title": "Lessons from the Para-powerlifters",
+      "source": "ABC Radio National – Ockham’s Razor",
+      "year": "2022",
+      "date": "2022-04-23",
+      "category": "Broadcast & Audio",
+      "topic": "Parasport",
+      "description": "ABC science communication segment on strength, para-powerlifting, and how strength can be measured.",
+      "url": "https://www.abc.net.au/listen/programs/ockhamsrazor/how-do-you-measure-strength/13847836",
+      "button_text": "Listen now",
+      "source_type": "CMS seed; externally verified"
     },
     {
       "title": "3 reasons why Paralympic powerlifters shift seemingly impossible weights",
@@ -173,16 +173,16 @@
       "source_type": "CMS seed"
     },
     {
-      "title": "ABC Radio Brisbane evenings with Kelly Higgins-Devine",
-      "source": "ABC Radio Brisbane",
-      "year": "",
+      "title": "Powerlifting at any age: your fountain of health? With Dan van den Hoek",
+      "source": "Evidence Strong",
+      "year": "2024",
       "date": "",
       "category": "Broadcast & Audio",
-      "topic": "Research Translation",
-      "description": "Radio appearance listed from current media page. No public recording is currently available.",
-      "url": "",
-      "button_text": "No public recording",
-      "source_type": "Current website listing"
+      "topic": "Powerlifting",
+      "description": "Podcast discussion on powerlifting, health, ageing, strength training, and strength sports research.",
+      "url": "https://rss.com/podcasts/evidence-strong/1700610/",
+      "button_text": "Listen now",
+      "source_type": "CMS seed; externally verified"
     },
     {
       "title": "ABC Radio Perth with Michael Tetlow – What it takes to be an F1 driver",
@@ -204,6 +204,18 @@
       "category": "Broadcast & Audio",
       "topic": "Parasport",
       "description": "Radio segment listed from current media page. No public recording is currently available.",
+      "url": "",
+      "button_text": "No public recording",
+      "source_type": "Current website listing"
+    },
+    {
+      "title": "ABC Radio Brisbane evenings with Kelly Higgins-Devine",
+      "source": "ABC Radio Brisbane",
+      "year": "",
+      "date": "",
+      "category": "Broadcast & Audio",
+      "topic": "Research Translation",
+      "description": "Radio appearance listed from current media page. No public recording is currently available.",
       "url": "",
       "button_text": "No public recording",
       "source_type": "Current website listing"
