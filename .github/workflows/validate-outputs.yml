@@ -1,22 +1,30 @@
-name: Validate public outputs
+name: Build and validate public outputs
 
 on:
   workflow_dispatch:
   schedule:
-    # Monthly refresh/validation on the first day of each month.
+    # Monthly rebuild and validation on the first day of each month.
     - cron: '17 2 1 * *'
   push:
     paths:
+      - 'posts/**'
+      - 'scripts/build_commentary.py'
       - 'outputs.json'
       - 'index.html'
       - '.github/workflows/validate-outputs.yml'
 
+permissions:
+  contents: write
+
 jobs:
-  validate:
+  build-and-validate:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+
+      - name: Build commentary articles and media index
+        run: python scripts/build_commentary.py
 
       - name: Validate outputs JSON and links
         run: |
@@ -78,5 +86,26 @@ jobs:
                           f'Output {i} ({title}) has no URL and unsupported disabled button text: "{button}"'
                       )
 
-          print(f'Validated {len(outputs)} outputs and hyperlink rules.')
+          article_files = list(Path('articles').glob('*.html'))
+          post_files = list(Path('posts').glob('*.md'))
+          if len(article_files) != len(post_files):
+              raise SystemExit(
+                  f'Expected one generated article per post; found {len(post_files)} posts and '
+                  f'{len(article_files)} articles.'
+              )
+
+          print(f'Validated {len(outputs)} outputs, {len(post_files)} posts and hyperlink rules.')
           PY
+
+      - name: Commit generated files
+        if: github.event_name != 'pull_request'
+        run: |
+          if git diff --quiet -- outputs.json articles/; then
+            echo 'No generated changes to commit.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add outputs.json articles/
+          git commit -m 'Build commentary articles and refresh media index'
+          git push
