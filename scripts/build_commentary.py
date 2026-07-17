@@ -17,6 +17,8 @@ POSTS_DIR = ROOT / "posts"
 ARTICLES_DIR = ROOT / "articles"
 OUTPUTS_PATH = ROOT / "outputs.json"
 SITE_BASE = "https://dvandenhoek13.github.io/dv-public-outputs"
+CONTACT_EMAIL = "dan@danvandenhoek.com"
+MAIN_SITE = "https://www.danvandenhoek.com"
 
 
 def parse_post(path: Path) -> tuple[dict[str, str], str]:
@@ -94,20 +96,28 @@ def article_page(meta: dict[str, str], body_html: str) -> str:
 <style>
 :root{{--cyan:#00BCD4;--bg:#111216;--panel:#17191f;--text:#f5f5f5;--muted:#bfc5cc;--line:#3b4048}}
 *{{box-sizing:border-box}} body{{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.68}}
-main{{max-width:820px;margin:0 auto;padding:48px 22px 80px}} .eyebrow{{font-family:'Courier New',monospace;color:var(--cyan);font-weight:800;text-transform:uppercase}}
+main{{max-width:820px;margin:0 auto;padding:30px 22px 80px}} .eyebrow{{font-family:'Courier New',monospace;color:var(--cyan);font-weight:800;text-transform:uppercase}}
+.site-header{{display:flex;align-items:center;justify-content:space-between;gap:18px;padding-bottom:22px;margin-bottom:28px;border-bottom:1px solid var(--line)}}
+.vdh-logo{{display:inline-flex;align-items:center;text-decoration:none;color:var(--text);font-family:'Courier New',monospace;font-size:2rem;font-weight:900;letter-spacing:-.1em;line-height:1}}
+.vdh-logo span{{color:var(--cyan)}} .contact-link{{font-family:'Courier New',monospace;text-decoration:none;font-weight:800;text-transform:uppercase}}
 h1{{font-size:clamp(2rem,6vw,3.7rem);line-height:1.08;margin:.35rem 0 1rem}} .meta{{color:var(--muted);margin-bottom:2.4rem}}
 h2{{font-size:1.55rem;margin-top:2.3rem}} p{{font-size:1.08rem}} blockquote{{border-left:4px solid var(--cyan);margin:2rem 0;padding:.2rem 0 .2rem 1.2rem;font-size:1.25rem;font-weight:700}}
 a{{color:#8cecf7}} .back{{display:inline-block;margin-bottom:2rem;text-decoration:none;font-family:'Courier New',monospace}}
-footer{{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--line);color:var(--muted)}}
+footer{{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--line);color:var(--muted);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}}
+footer a{{font-weight:800}} @media(max-width:560px){{.site-header{{align-items:flex-start}}.contact-link{{font-size:.82rem}}}}
 </style>
 </head>
 <body><main>
+<header class="site-header">
+<a class="vdh-logo" href="{MAIN_SITE}" aria-label="VDH home">VDH<span>.</span></a>
+<a class="contact-link" href="mailto:{CONTACT_EMAIL}">Contact Dan</a>
+</header>
 <a class="back" href="../">← Back to media</a>
 <div class="eyebrow">{topic}</div>
 <h1>{title}</h1>
 <div class="meta">Published {published} · Dr Dan van den Hoek</div>
 <article>{body_html}</article>
-<footer>Evidence-based commentary on strength, inclusive sport, technology and performance.</footer>
+<footer><span>Evidence-based commentary on strength, inclusive sport, technology and performance.</span><a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a></footer>
 </main></body></html>"""
 
 
