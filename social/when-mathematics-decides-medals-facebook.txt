@@ -1,0 +1,10 @@
+At the Glasgow 2026 Commonwealth Games, para-powerlifting medals will be decided using more than the weight on the bar.
+
+Because the usual bodyweight categories have been combined into lightweight and heavyweight divisions, athletes of very different sizes will be compared using a mathematical scoring system.
+
+These algorithms are intended to make competition fair, but no formula is completely neutral. Depending on how bodyweight is accounted for, lighter or heavier athletes may be affected differently.
+
+I have written a new article explaining how these scoring systems work, why they matter in Glasgow, and what this tells us about the wider use of algorithms in sport.
+
+Read the article here:
+https://www.danvandenhoek.com/insights/when-mathematics-decides-medals
