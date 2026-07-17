@@ -141,7 +141,8 @@ def publish(endpoint: str, key: str, payload: dict[str, object]) -> dict[str, ob
 
 def main() -> None:
     key = os.environ.get("WIX_PUBLISH_KEY", "").strip()
-    endpoint = os.environ.get("WIX_PUBLISH_URL", DEFAULT_ENDPOINT).strip()
+    configured_endpoint = os.environ.get("WIX_PUBLISH_URL", "").strip()
+    endpoint = configured_endpoint or DEFAULT_ENDPOINT
 
     if not key:
         print("WIX_PUBLISH_KEY is not configured; skipping Wix publication.")
@@ -151,10 +152,17 @@ def main() -> None:
     if not selected:
         raise SystemExit("No Insight Markdown files were found.")
 
+    published_count = 0
     for path in selected:
         meta, body = parse_post(path)
+        if meta.get("status", "Published").strip().lower() != "published":
+            print(f"Skipped draft: {meta['title']}")
+            continue
         result = publish(endpoint, key, payload_for(meta, body))
+        published_count += 1
         print(f"{result.get('action', 'published').title()}: {meta['title']} ({meta['slug']})")
+
+    print(f"Published {published_count} Insight(s) to Wix.")
 
 
 if __name__ == "__main__":
