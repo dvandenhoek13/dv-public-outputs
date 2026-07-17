@@ -1,0 +1,16 @@
+At the Glasgow 2026 Commonwealth Games, the athlete who lifts the most weight will not necessarily win gold.
+
+Para-powerlifting will use combined lightweight and heavyweight divisions, meaning performances across different bodyweights must be compared using a mathematical scoring system.
+
+These algorithms are designed to make competition fair. But research across powerlifting and para-powerlifting shows that no scoring system is completely neutral across the full bodyweight spectrum.
+
+That matters because, in Glasgow, the algorithm will not simply supplement the competition format. It will help determine who stands on the podium.
+
+I have written a new article exploring why weight classes exist, how bodyweight-adjusted scoring works, and what para-powerlifting can teach us about the growing role of algorithms in sport.
+
+It is not an argument against the competition format. It is a reminder that fairness should be measured, tested and explained—particularly when mathematics is helping decide medals.
+
+Read the full article:
+https://www.danvandenhoek.com/insights/when-mathematics-decides-medals
+
+#ParaPowerlifting #CommonwealthGames #SportsScience #Algorithms #InclusiveSport #ResearchTranslation
