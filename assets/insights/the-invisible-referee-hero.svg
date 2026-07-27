@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 760" role="img" aria-labelledby="title desc">
+<title id="title">The Invisible Referee</title><desc id="desc">A vacant para powerlifting bench with a long, wide platform, equal red plates on both sides of the bar, mathematical scoring notation and a teal performance curve.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#020405"/><stop offset="1" stop-color="#0a1519"/></linearGradient><linearGradient id="steel" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d9dee0"/><stop offset=".5" stop-color="#7f898d"/><stop offset="1" stop-color="#30383b"/></linearGradient><filter id="shadow"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-opacity=".55"/></filter></defs>
+<rect width="1600" height="760" fill="url(#bg)"/>
+<g opacity=".15" stroke="#00b7c7"><path d="M930 120H1540M930 170H1540M930 220H1540M930 270H1540M930 320H1540M930 370H1540M980 80V430M1080 80V430M1180 80V430M1280 80V430M1380 80V430M1480 80V430"/></g>
+<g fill="#28c8d2" font-family="Arial,Helvetica,sans-serif"><text x="70" y="72" font-size="28" font-weight="700" letter-spacing="2">BEYOND THE SCOREBOARD · #1</text><text x="70" y="194" font-size="86" font-weight="800" fill="#fff">The Invisible</text><text x="70" y="284" font-size="86" font-weight="800" fill="#fff">Referee</text><text x="70" y="358" font-size="38" font-weight="700">What the Commonwealth Games</text><text x="70" y="408" font-size="38" font-weight="700">taught us about sporting algorithms</text><text x="70" y="474" font-size="27" font-style="italic" fill="#fff">By Dr Daniel van den Hoek</text></g>
+<g font-family="Georgia,serif" fill="#5ed7dd" font-size="29" opacity=".92"><text x="970" y="72">AH score = lift × bodyweight coefficient</text><text x="1040" y="116">score = L / f(BW)</text></g>
+<path d="M980 360 C1080 285 1160 335 1240 300 S1410 190 1535 230" fill="none" stroke="#21c6d3" stroke-width="6"/><g fill="#21c6d3"><circle cx="980" cy="360" r="8"/><circle cx="1240" cy="300" r="8"/><circle cx="1535" cy="230" r="8"/></g>
+<!-- Accurate vacant para bench: long full-body platform, broad torso pad, narrow head section -->
+<g filter="url(#shadow)">
+<g stroke="#151b1e" stroke-width="8" fill="url(#steel)"><path d="M610 595H1510V658H610z"/><path d="M640 658v72M1468 658v72M820 658v72M1270 658v72"/><path d="M650 710h190M1430 710h110"/></g>
+<path d="M650 552 L1335 552 Q1385 552 1410 578 L1450 615 L650 615 Q622 615 622 586 Q622 558 650 552Z" fill="#07090a" stroke="#2a3336" stroke-width="8"/>
+<path d="M650 552H1000V615H650Q622 615 622 584Q622 552 650 552Z" fill="#111516"/>
+<path d="M1000 552H1335Q1382 552 1410 578L1450 615H1000Z" fill="#090b0c"/>
+<!-- uprights and rack -->
+<g fill="url(#steel)" stroke="#14191b" stroke-width="8"><path d="M730 170H780V570H730z"/><path d="M1390 170H1440V570H1390z"/><path d="M700 540H820V585H700z"/><path d="M1355 540H1475V585H1355z"/></g>
+<g stroke="#0c1012" stroke-width="9"><path d="M742 230h25M742 285h25M742 340h25M742 395h25M742 450h25M1402 230h25M1402 285h25M1402 340h25M1402 395h25M1402 450h25"/></g>
+<!-- bar --> <rect x="570" y="270" width="1015" height="20" rx="10" fill="#b7c0c3" stroke="#343c3f" stroke-width="5"/>
+<!-- matched plates -->
+<g stroke="#4e0909" stroke-width="8"><rect x="585" y="205" width="35" height="150" rx="9" fill="#b51e24"/><rect x="625" y="198" width="35" height="164" rx="9" fill="#c5262d"/><rect x="665" y="190" width="35" height="180" rx="9" fill="#d12d34"/><rect x="1455" y="190" width="35" height="180" rx="9" fill="#d12d34"/><rect x="1495" y="198" width="35" height="164" rx="9" fill="#c5262d"/><rect x="1535" y="205" width="35" height="150" rx="9" fill="#b51e24"/></g>
+<g fill="#d7dde0"><rect x="550" y="260" width="40" height="40" rx="4"/><rect x="1570" y="260" width="25" height="40" rx="4"/></g>
+</g>
+</svg>
