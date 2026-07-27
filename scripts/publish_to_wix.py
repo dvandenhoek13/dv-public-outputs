@@ -51,7 +51,7 @@ def inline_markup(text: str) -> str:
     text = re.sub(r"`(.+?)`", r"<code>\1</code>", text)
     text = re.sub(
         r"\[([^\]]+)\]\((https?://[^)]+)\)",
-        r'<a href="\2">\1</a>',
+        r'<a href="\2" target="_blank" rel="noopener noreferrer">\1</a>',
         text,
     )
     return text
@@ -60,32 +60,68 @@ def inline_markup(text: str) -> str:
 def markdown_to_html(markdown: str) -> str:
     blocks: list[str] = []
     paragraph: list[str] = []
+    list_items: list[str] = []
 
-    def flush() -> None:
+    def flush_paragraph() -> None:
         if paragraph:
             blocks.append(f"<p>{inline_markup(' '.join(paragraph))}</p>")
             paragraph.clear()
 
+    def flush_list() -> None:
+        if list_items:
+            items = "".join(f"<li>{inline_markup(item)}</li>" for item in list_items)
+            blocks.append(f"<ul>{items}</ul>")
+            list_items.clear()
+
+    image_pattern = re.compile(r"^!\[([^\]]*)\]\((https?://[^)]+)\)$")
+
     for raw in markdown.splitlines():
         line = raw.strip()
+        image_match = image_pattern.match(line)
+
         if not line:
-            flush()
+            flush_paragraph()
+            flush_list()
+        elif image_match:
+            flush_paragraph()
+            flush_list()
+            alt, src = image_match.groups()
+            blocks.append(
+                '<figure style="margin:2rem 0;">'
+                f'<img src="{html.escape(src, quote=True)}" '
+                f'alt="{html.escape(alt, quote=True)}" '
+                'style="display:block;width:100%;height:auto;border-radius:12px;" loading="lazy">'
+                "</figure>"
+            )
+        elif line.startswith("- "):
+            flush_paragraph()
+            list_items.append(line[2:])
         elif line.startswith("### "):
-            flush()
+            flush_paragraph()
+            flush_list()
             blocks.append(f"<h3>{inline_markup(line[4:])}</h3>")
         elif line.startswith("## "):
-            flush()
+            flush_paragraph()
+            flush_list()
             blocks.append(f"<h2>{inline_markup(line[3:])}</h2>")
         elif line.startswith("# "):
-            flush()
+            flush_paragraph()
+            flush_list()
             blocks.append(f"<h1>{inline_markup(line[2:])}</h1>")
         elif line.startswith("> "):
-            flush()
+            flush_paragraph()
+            flush_list()
             blocks.append(f"<blockquote>{inline_markup(line[2:])}</blockquote>")
+        elif line == "---":
+            flush_paragraph()
+            flush_list()
+            blocks.append("<hr>")
         else:
+            flush_list()
             paragraph.append(line)
 
-    flush()
+    flush_paragraph()
+    flush_list()
     return "\n".join(blocks)
 
 
