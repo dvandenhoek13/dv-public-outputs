@@ -1,9 +1,21 @@
 {
-  "generated_at": "2026-08-01",
+  "generated_at": "2026-08-19",
   "owner": "Dr Dan van den Hoek",
   "description": "Selected media appearances, written commentary, podcasts, radio appearances, news stories, and public commentary.",
   "notes": "Research publications, professional reports, university outputs, and tools have been moved to the separate research outputs page.",
   "outputs": [
+    {
+      "title": "Technology can make sport more accessible, but inclusion has to come first",
+      "source": "UniSC News",
+      "year": "2026",
+      "date": "2026-08",
+      "category": "Media & Commentary",
+      "topic": "Inclusive Sport",
+      "description": "UniSC News feature on how technology can improve access to sport while emphasising that inclusion, co-design, and community needs must remain central.",
+      "url": "https://www.unisc.edu.au/about/unisc-news/news-archive/2026/august/technology-can-make-sport-more-accessible-but-inclusion-has-to-come-first",
+      "button_text": "Read at UniSC",
+      "source_type": "UniSC News; user supplied"
+    },
     {
       "title": "The Invisible Referee: What the Commonwealth Games Taught Us About Sporting Algorithms",
       "source": "Dan van den Hoek",
